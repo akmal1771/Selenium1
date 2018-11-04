@@ -4,6 +4,7 @@ import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -34,12 +35,19 @@ public class SeleniumDemo {
 		
 		driver.findElement(By.linkText("sign up")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.name("first-name")).sendKeys("firstName");
-		driver.findElement(By.name("last-name")).sendKeys("lastName");
-		driver.findElement(By.name("email")).sendKeys(email);
-		driver.findElement(By.name("password")).sendKeys(password);
+		WebElement FName=driver.findElement(By.name("first-name"));
+		FName.sendKeys("firstName");
+		
+		WebElement LName=driver.findElement(By.name("last-name"));
+		LName.sendKeys("lastName");
+		
+		WebElement eMail=driver.findElement(By.name("email"));
+		eMail.sendKeys(email);
+		WebElement ePass=driver.findElement(By.name("password"));
+		ePass.sendKeys(password);
       
-        driver.findElement(By.xpath("//button[.='sign up']")).click();	
+        WebElement eSignUp=driver.findElement(By.xpath("//button[.='sign up']"));
+        
 		if(driver.getTitle().equalsIgnoreCase("Sing in | cybertek-bnb")) {
 			System.out.println("Sign up successfully");
 		}
