@@ -64,7 +64,9 @@ public class SeleniumDemo {
     	System.out.println("User signed-in successfully");
     }
     else {System.out.println("Sign in failed");}
-	}
 	
-
+	
+	WebDriver driver2 = new ChromeDriver();
+	driver2.get("https://amazon.com");
+	}
 }
